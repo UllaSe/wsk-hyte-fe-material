@@ -59,7 +59,7 @@ Navigaation ei ole tarkoitus toimia vielä, mutta on oltava tyylitelty. Luo siis
 2. Miten jaottelen leiskan sisällö eri alueisiin?
 3. Mistä elementeistä navigaatio on tehty?
 
-Jotta oppisimme tällä kurssilla uusia asioita, on sivuston teknologisiin ratkaisuihin tiukemmat kriteerit. Ensimmäisellä viikolla rakennamme sivustosta vai yhden osan. Lisäämme responsiivisuutta ja sisältöä seuraavilla viikolla, viikko kerrallaan.
+Jotta oppisimme tällä kurssilla uusia asioita, on sivuston teknologisiin ratkaisuihin tiukemmat kriteerit. Ensimmäisellä viikolla rakennamme sivustosta vai yhden osan. Lisäämme responsiivisuutta sekä sisältöä stattisesti/dynaamisesti seuraavilla viikolla, viikko kerrallaan.
 
 <hr>
 
@@ -69,7 +69,7 @@ Jotta oppisimme tällä kurssilla uusia asioita, on sivuston teknologisiin ratka
 
 Ensimmäisellä viikolla saat käyttää siis vain perus asemointia, **ei flexbox, eikä grid asettelua**. Ensin teemme vain osan sivustosta. Aloitamme sivun about ja navigaatio-osuudesta. Huomaa, että sivujen pitää olla myös keskitetty.
 
-Käytä sivuston esimerkki designia vain pohjana. Mieti oma hyvinvointiteemasi. Käytä vaihtoehtosia värejä sekä kuvia
+Käytä sivuston esimerkki designia vain pohjana. Mieti oma hyvinvointiteemasi. Käytä vaihtoehtoisia värejä sekä kuvia
 
 ## Tekniset vaatimukset
 
@@ -78,7 +78,7 @@ Käytä sivuston esimerkki designia vain pohjana. Mieti oma hyvinvointiteemasi. 
 
 - Kirjoita HTML sekä CSS-koodi erillisiin tiedostoihin, jonka avulla luot sivustosi
 - Opettele koodatessasi samalla Emmetin käyttöä
-- Sykekuvan näkyvä harmaa osio on tehty css taustakuvana. Mikäli tämä on vielä hakusessa, käytä vain väriä.
+- Yhteystieto-osion takana näkyvä kuva on tehty css taustakuvana. Mikäli tämä on vielä hakusessa, käytä vain väriä.
 - Saat tehtyä suorakulmaisista elementeistä ja reunuksista helposti pyöreitä/pyöristettyjä käyttämällä [border-radius määrittelyä](https://www.w3schools.com/cssref/css3_pr_border-radius.asp) [reunoja](https://www.w3schools.com/css/css_border.asp
 - Jos haluat käyttää varjostusta, eli Box-shadow ominaisuutta:
   - [box-shadow](https://css-tricks.com/almanac/properties/b/box-shadow/)

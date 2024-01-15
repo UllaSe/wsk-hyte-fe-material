@@ -12,7 +12,7 @@ Ensimmäisen vuoden kursseilla harjoiteltiin Web puolen peruskonsepteja. Esim. m
 
 Ensimmäisenä päivänä harjoittelemme näitä asioita, löydät asemoinnin treenaamista varten, laatikko-harjoituspohjan täältä. Koodissa on mukana linkit asemoinnin eri käsitteisiin.
 
-https://gist.github.com/UllaSe/ee995093047e953f0fa8cbb10ad564ac
+[Laatikkoleikki](harjoitukset/asemointi.html)
 
 Näitä osittain korvaamaan ja helpottamaan onkin suunniteltu Flexbox ja CSS Grid käsitteet. Flex ja Grid toimivat molemmat mukavasti yhdessä, kummallakin on kuitenkin oat käyttötarkoituksensa. Näihin syvennymme kunnolla seuraavien viikkojen aikana.
 

@@ -7,4 +7,5 @@ Viikko 1
 
 Viikko 2
 
-2. JS kertaus, BOM, DOM ja eventit
+1. [JS kertaus, BOM, DOM ja eventit](02-bom-dom.md)
+2. [Viikon 2 BMI harjoituspohja](harjoitukset/bmi-calculator.html)

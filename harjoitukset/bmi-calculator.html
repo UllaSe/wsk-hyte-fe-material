@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="bmi-style.css" />
+    <!-- Add icon library -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <div class="card">
+      <img src="bmi.jpeg" alt="BMI Index chart" style="width: 100%" />
+      <h1>Painoindeksilaskuri / BMI-laskuri</h1>
+      <p class="title">
+        Painoindeksilaskurilla voit laskea pituuden ja painon perustella
+        painoindeksin (BMI, Body Mass Index).
+      </p>
+
+      <form action="">
+        <label for="fname">Anna painosi:</label><br />
+        <input
+          type="text"
+          id="weight"
+          name="fname"
+          value="80"
+          placeholder="kg"
+        /><br />
+        <label for="lname">Anna pituutesi:</label><br />
+        <input
+          type="text"
+          id="height"
+          name="lname"
+          value="160"
+          placeholder="cm"
+        /><br /><br />
+      </form>
+
+      <button class="btn calculate">Laske indeksi</button>
+
+      <section class="result">
+        <p>💯 Mittaustuloksesi: <span class="bmi-score">0</span></p>
+        <p>
+          〽️ Analyysi:
+          <span class="analysis">Tähän saat analyysin BMI tuloksestasi</span>
+        </p>
+
+        <p>🥇 Matalin BMI: <span class="highscore">0</span></p>
+      </section>
+
+      <section class="bmi-table">
+        <table id="bmiTbl" class="table table-bordered">
+          <tbody>
+            <tr class="bmi0-19">
+              <td>Alipaino</td>
+              <td>0 - 18,9</td>
+            </tr>
+            <tr class="bmi19-25">
+              <td>Normaali paino</td>
+              <td>19 - 24,9</td>
+            </tr>
+            <tr class="bmi25-30">
+              <td>Ylipaino</td>
+              <td>25,0 - 40,0 tai enemmän</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </div>
+    <script src="bmi.js"></script>
+  </body>
+</html>

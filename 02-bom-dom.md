@@ -1,11 +1,21 @@
 # BOM, DOM & Eventit
 
-Kertaa materiaalia ensimmäisen vuoden kurssilta::
+Kertaa materiaalia ensimmäisen vuoden kurssilta:
 
-Osa 1: Bom ja Dom
+Bom, Dom ja Eventit
 
 1. [BOM & DOM](https://github.com/ilkkamtk/JavaScript-english/blob/main/BOM-DOM-event.md)
    - Käy läpi koko materiaali
+
+## Asemonti:
+
+### Tehtävä 1
+
+Asemoi kuvassa näkyvä sydän tai vastaava kuva käyttäen absolute positiointia. Tähän materiaali edellisessä tehtävässä.
+
+### Tehtävä 2
+
+Luo nyt staattisen hmtl sijasta asemoiti sydänkuva käyttäen javascriptiä ja DOM metodeja. Lisää sivuillesi js tiedosto.
 
 ## Bom ja Dom tehtävät:
 

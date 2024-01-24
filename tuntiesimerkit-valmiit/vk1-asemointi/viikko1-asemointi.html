@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Positioning Items</title>
+    <meta charset="UTF-8" />
+
+    <style>
+      /*////////////////////
+        // Positioning items    
+        //////////////////////
+        
+        Reset *
+
+        Display: inline vs block
+        https://www.w3schools.com/cssref/pr_class_display.asp
+    
+        Box-sizing
+        https://www.w3schools.com/css/css3_box-sizing.asp
+        
+        Using percentages and max-width
+        https://www.w3schools.com/cssref/css_units.asp
+
+        Centering
+        https://www.w3schools.com/css/css_align.asp
+    
+        Float and clear
+        https://www.w3schools.com/cssref/pr_class_float.asp
+
+                
+        Absolute/Relative positioning
+        https://www.w3schools.com/cssref/pr_class_position.asp
+        
+        
+        Flexbox - https://www.w3schools.com/css/css3_flexbox.asp
+
+        */
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode',
+          Geneva, Verdana, sans-serif;
+      }
+
+      /* img */
+      img {
+      }
+
+      /* container */
+      .container {
+      }
+
+      /* relative and absolute positioning with blue */
+      #blue {
+      }
+
+      #oranssi {
+        color: orange;
+      }
+
+      p {
+        color: pink;
+      }
+      p {
+        color: blue;
+      }
+
+      .info {
+        color: rgb(91, 140, 26);
+      }
+      .bigfont {
+        font-size: 26px;
+      }
+
+      #red {
+        background-color: red;
+      }
+      #green {
+        background-color: green;
+      }
+      #blue {
+        background-color: blue;
+      }
+      #yellow {
+        background-color: yellow;
+        color: black;
+      }
+      #orange {
+        background-color: orange;
+      }
+      .box {
+        height: 100px;
+        width: 20%;
+        border: 2px solid black;
+        color: aliceblue;
+        display: block;
+        float: left;
+        padding: 5px;
+      }
+      .clear {
+        clear: both;
+      }
+      main {
+        background-color: rgb(192, 192, 185);
+        padding: 10px;
+        border: 3px dashed red;
+        width: 700px;
+        /* text-align: center; */
+        margin: auto;
+        margin-top: 100px;
+        padding-left: 50px;
+        padding-right: 100px;
+      }
+      nav {
+        width: 700px;
+      }
+      footer {
+        margin-top: 50px;
+        height: 100px;
+        background-color: brown;
+        color: white;
+        text-align: center;
+        padding-top: 30px;
+      }
+      #bokseri {
+        width: 300px;
+        float: right;
+        margin-top: 40px;
+      }
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        width: 100%;
+      }
+      main {
+        position: relative;
+        margin-top: 200px;
+      }
+      #mini {
+        background-color: blue;
+        width: 100px;
+        height: 100px;
+        position: fixed;
+        top: 50%;
+        right: 20px;
+        /* z-index: 10; */
+      }
+      #mini2 {
+        background-color: rgb(76, 90, 37);
+        width: 100px;
+        height: 100px;
+        transition: background-color 1s;
+        /* position: relative;
+        z-index: 2; */
+      }
+
+      #mini2:hover {
+        background-color: aquamarine;
+      }
+
+      a {
+        margin: 20px;
+        padding: 20px;
+      }
+
+      /* unvisited link */
+      a:link,
+      a:visited {
+        color: red;
+      }
+
+      /* mouse over link */
+      a:hover,
+      a:active {
+        color: hotpink;
+      }
+
+      p::first-letter {
+        font-size: 20px;
+        color: rgb(251, 20, 58);
+      }
+
+      .clearfix::after {
+        content: '';
+        clear: both;
+        display: table;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="clearfix">
+      <div class="box" id="red">Box 1</div>
+      <div class="box" id="green">Box 2</div>
+      <div class="box" id="blue">Box 3</div>
+      <div class="box" id="yellow">Box 4</div>
+      <div class="box" id="orange">Box 5</div>
+    </nav>
+
+    <main class="mainLuokka">
+      <div id="mini">1</div>
+      <div id="mini2">2</div>
+
+      <img id="bokseri" src="images/Boxer-puppy.jpg" alt="Söpö bokseri" />
+
+      <h2>Heading 2</h2>
+
+      <h3>Heading 3</h3>
+
+      <!-- Responsive images and centering -->
+
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita rem cumque esse minima,
+        doloribus quam molestias ipsum ullam obcaecati consectetur nobis voluptas, adipisci in
+        deleniti? Amet recusandae aspernatur vel officia. Eligendi, ipsum obcaecati. Doloremque,
+        corrupti soluta. Quas optio dolorem, voluptas sunt dolorum, laborum a nobis blanditiis illo
+        nostrum neque tempore assumenda earum consectetur ex omnis velit quo, qui delectus eligendi.
+        Commodi non, quibusdam, cum libero facilis culpa reprehenderit pariatur aperiam unde fugit
+        molestias tempora odit possimus inventore ex nihil. Rerum, magni hic perferendis porro
+        deserunt veritatis! Debitis iste numquam consequatur.
+      </p>
+
+      <a href="https://www.is.fi/" target="_blank">ILTASANOMAT</a>
+
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita rem cumque esse minima,
+        doloribus quam molestias ipsum ullam obcaecati consectetur nobis voluptas, adipisci in
+        deleniti? Amet recusandae aspernatur vel officia. Eligendi, ipsum obcaecati. Doloremque,
+        corrupti soluta. Quas optio dolorem, voluptas sunt dolorum, laborum a nobis blanditiis illo
+        nostrum neque tempore assumenda earum consectetur ex omnis velit quo, qui delectus eligendi.
+        Commodi non, quibusdam, cum libero facilis culpa reprehenderit pariatur aperiam unde fugit
+        molestias tempora odit possimus inventore ex nihil. Rerum, magni hic perferendis porro
+        deserunt veritatis! Debitis iste numquam consequatur.
+      </p>
+    </main>
+
+    <footer>Copuright meitsi</footer>
+  </body>
+</html>

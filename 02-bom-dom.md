@@ -11,7 +11,7 @@ Bom, Dom ja Eventit
 
 ### Tehtävä 1
 
-Asemoi viime viikon tehtävässä ja kuvassa näkyvä sydän (käytä omaa kuvaasi toki) absolute positiointia. Tähän materiaali edellisessä tehtävässä.
+Asemoi viime viikon tehtävässä ja kuvassa näkyvä sydän (käytä omaa kuvaasi toki) käyttäen absolute positiointia. Tähän materiaali edellisessä tehtävässä.
 
 ![image](images/vk2-tehtava.png)
 

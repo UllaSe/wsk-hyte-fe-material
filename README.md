@@ -13,5 +13,5 @@ Viikko 2
 
 Viikko 3
 
-1. [Responsiivinen suunnittelu (google sheets)](03-responsiivisuus.md)
+1. [Responsiivinen suunnittelu](03-responsiivisuus.md)
 2. [Viikon 3 linkit](03-linkkejä.md)

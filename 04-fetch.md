@@ -89,7 +89,9 @@ fetch('https://api.example.com/data')
   });
 ```
 
-Tässä esimerkissä fetchData-funktio on määritelty async-funktioksi, joka käyttää await-komentoa Fetch API -pyyntöjen odottamiseen. fetch-kutsu odottaa pyynnön valmistumista, ja vastaus tallennetaan response-muuttujaan. Tämän jälkeen vastauksen tila tarkistetaan, ja jos se on virheellinen, heitetään virhe. Muussa tapauksessa vastauksen JSON-sisältö odotetaan ja tallennetaan data-muuttujaan, joka lopuksi kirjataan konsoliin. Virheet käsitellään try-catch-rakenteessa. fetchData-funktio kutsutaan sitten suorituksen aloittamiseksi.
+Tässä esimerkissä fetch-funktiota käytetään tekemään GET-pyyntö 'https://api.example.com/data'. Vastaus tarkistetaan onnistumisen osalta, ja jos se onnistuu, vastauksen JSON-sisältö kirjataan konsoliin.
+
+.catch-lohkoa käytetään käsittelemään mahdolliset fetch-operaation aikana ilmenevät virheet. Fetch on tullut vakiintuneeksi tavaksi tehdä HTTP-pyyntöjä nykyaikaisessa verkkokehityksessä.
 
 # async + await
 

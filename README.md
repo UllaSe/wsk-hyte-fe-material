@@ -15,3 +15,8 @@ Viikko 3
 
 1. [Responsiivinen suunnittelu](03-responsiivisuus.md)
 2. [Viikon 3 linkit](03-linkkejä.md)
+
+Viikko 4
+
+1. [Flexbox](04-flexbox.md)
+2. [Vite, JS + Fetch](04-fetch.md)

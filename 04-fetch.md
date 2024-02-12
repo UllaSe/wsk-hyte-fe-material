@@ -160,6 +160,34 @@ Muokataan hieman esimerkkiä:
 
 - [Creating DOM elements](https://www.w3schools.com/js/js_htmldom_nodes.asp)
 
+```json
+[
+  {
+    "name": "Sleeping cat",
+    "description": "In this picture the cat is sleeping.",
+    "address": "http://placekitten.com/321/241"
+  },
+  {
+    "name": "Sleeping cat",
+    "description": "In this picture the cat is lying.",
+    "address": "http://placekitten.com/421/251"
+  }
+]
+```
+
+```html
+<!-- Kissakuvat tiedostosta / jatkossa Päiväkirjamerkintä fetch -->
+<div id="diary"></div>
+
+<!-- kuvat -->
+<div id="cards">
+  <!-- <figure>
+        <img src="" alt="Trulli" style="width:100%">
+        <figcaption></figcaption>
+      </figure> -->
+</div>
+```
+
 ![image](images/json.png)
 
 ### Tehtävä 3 - Kortit

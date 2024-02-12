@@ -152,6 +152,8 @@ Elementtien luominen DOM:ssa tarkoittaa uusien HTML- tai XML-elementtien luomist
 
 Hae ja tutki viime vuoden materiaaliesta esimerkki jossa sivuille luodaan kissakuvakortteja.
 
+[JSON](https://github.com/ilkkamtk/JavaScript-english/blob/main/apit-ajax.md#json-javascript-object-notation)
+
 Muokataan hieman esimerkkiä:
 
 1. Tallenne kuvat **pics.json** nimiseksi tiedostokseksi projektisi juureen.

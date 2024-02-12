@@ -217,9 +217,9 @@ Alla on kuvankaappaus kahdesta kortista. Korttien asemointi on tehty puhtaasti h
 
 ![image](images/flexbox.png)
 
-### Tehtävä 4 - Flexboxilla tehty kortti + Fetch + Itse luodut elementit
+### Tehtävä 4 - Flexboxilla tehty kortti + Fetch omasta rajapinnasta + Itse luodut elementit
 
-Seuraavaksi yhdistä kaikki edellä opittu. Tallenna edellisen tehtäväsi korttien tekstisisältö **pics.json** tiedostoon. Rakenne voi olla esim. seurava. Käytä omaa tekstiäsi ja voit muuttaa json tiedoston rakennetta halutessasi:
+Seuraavaksi yhdistä kaikki edellä opittu. Jos rajapintasi ei vielä toimi voit alkuun tallentaa edellisen tehtäväsi korttien tekstisisällön **pics.json** tiedostoon. Rakenne voi olla esim. seuraava. Voit muuttaa json tiedoston rakennetta halutessasi:
 
 ```json
 [
@@ -238,6 +238,26 @@ Seuraavaksi yhdistä kaikki edellä opittu. Tallenna edellisen tehtäväsi kortt
 
 Luo seuraavaksi edellisen tehtävän kortit käyttäen DOM elementtien luomista. Kortit on siis luotava kokonaan javascriptin avulla. Luo nappula jota klikkaamalla haet tiedot **diary.json** tiedostosta.
 
-Vinkki: Tähän voit helposti käyttää chatgpt ym apureita. Anna toivottu html koodi ja pyydä tekoälyä kirjoittamaan elementtien luominen js:n avulla. Tarkista kuitenkin että generoitu koodi on järkevää.
+**HUOM** kun oma rajapintasi on valmis ja entries endpoint toimii, muokkaa tätä tehtävää. Haen kortteihin nyt tieto käyttäen API kutsua:
+
+```http
+# Get all entries
+GET http://localhost:3000/api/entries
+
+...
+  {
+    "entry_id": 6,
+    "user_id": 3,
+    "entry_date": "2024-02-11T22:00:00.000Z",
+    "mood": "Happy",
+    "weight": "69.60",
+    "sleep_hours": 7,
+    "notes": "This was a good day",
+    "created_at": "2024-02-12T12:43:56.000Z"
+  }
+...
+```
+
+Vinkki: Tähän elementtien generoimiseen voit helposti käyttää chatgpt ym apureita. Anna toivottu html koodi ja pyydä tekoälyä kirjoittamaan elementtien luominen js:n avulla. Tarkista kuitenkin että generoitu koodi on järkevää.
 
 ![image](images/kaikki.png)

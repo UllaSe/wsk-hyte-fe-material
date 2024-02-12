@@ -19,4 +19,10 @@ Viikko 3
 Viikko 4
 
 1. [Flexbox](04-flexbox.md)
-2. [Vite, JS + Fetch](04-fetch.md)
+2. [Vite, JS + Fetch, tehtävä1](04-fetch.md)
+
+Viikko 5
+
+1. [Fetch, tehtävät 2-4](04-fetch.md)
+2. [Viikon 5 - Fetch harjoituspohja](tuntiesimerkit-pohjat/vk5-fetch-pohja/)
+3. [Fetch harjoituspohjan materiaalia](05-apiharjoitus.md)

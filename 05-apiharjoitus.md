@@ -79,6 +79,13 @@ Haetuista tiedoista generoidaan taulukko dynaamisesti DOM metrodeilla ja jokaise
 </tr>
 ```
 
+```js
+const td3 = document.createElement('td');
+td3.innerHTML = `<button class="check" data-id="${log.user_id}">Info</button>`;
+td3.addEventListener('click', getOneUserDialog);
+tr.appendChild(td3);
+```
+
 ![image](images/getanddelete.png)
 
 Kun Info nappulaa klikkaa, hakee ohjelma tiedot käyttäen yksittäisen käyttäjän reittiä ja avaa yksittäisen käyttäjän tiedot dialogina. Tarvittavan ID:n hakuun se saa data-atrribuuti tiedoista.
@@ -91,9 +98,15 @@ GET http://127.0.0.1:3000/api/users/:id
 Koodiesimerkki:
 
 ```js
-const id = evt.target.attributes['data-id'].value;
-console.log(id);
-const url = `http://127.0.0.1:3000/api/users/${id}`;
+async function getOneUserDialog(evt) {
+  // haetaan data-attribuutin avulla id, tämä nopea tapa
+  const id = evt.target.attributes['data-id'].value;
+  console.log(id);
+  const url = `http://127.0.0.1:3000/api/users/${id}`;
+  try {
+    const data = await fetchData(url);
+    // avaa modaali ja lisää data
+  ...
 ```
 
 Kuvankappaaus:

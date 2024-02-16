@@ -24,5 +24,5 @@ Viikko 4
 Viikko 5
 
 1. [Fetch, tehtävät 2-4](04-fetch.md)
-2. [Viikon 5 - Fetch harjoituspohja](tuntiesimerkit-pohjat/vk5-fetch-pohja/)
-3. [Fetch harjoituspohjan materiaalia](05-apiharjoitus.md)
+2. [Viikon 5/7 - Harjoitustehtävän pohja](tuntiesimerkit-pohjat/vk5-fetch-pohja/)
+3. [Fetch harjoituspohjan materiaalia, ei kotitehtävä, tehdään hiihtoloman jälkeen](05-apiharjoitus.md)

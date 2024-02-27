@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <ul>
+      <li><a href="#home">Esimerkkisivusto</a></li>
+      <li><a href="#news">Tietoja</a></li>
+      <li style="float: right" class="active logout"><a href="">Logout</a></li>
+    </ul>
+
+    <!-- <div id="app"></div> -->
+
+    <div class="user">Hei kirjautunut käyttäjä: <span id="name">NIMI TÄHÄN</span>!</div>
+
+    <h3>/api/users</h3>
+
+    <h3>Esimerkkitaulukko</h3>
+
+    <table class="styled-table">
+      <thead>
+        <tr>
+          <th>User Name</th>
+          <th>User Level</th>
+          <th>Info</th>
+          <th>Delete</th>
+          <th>ID</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Dom</td>
+          <td>6000</td>
+          <td><button class="check" data-id="1">Info</button></td>
+          <td><button class="del" data-id="1">Delete</button></td>
+          <td>1</td>
+        </tr>
+        <!--  <tr class="active-row"> -->
+        <tr>
+          <td>Melissa</td>
+          <td>5150</td>
+          <td><button class="check" data-id="2">Info</button></td>
+          <td><button class="del" data-id="2">Delete</button></td>
+          <td>2</td>
+        </tr>
+        <!-- and so on... -->
+        <!-- Delete nappula poistaa käyttäjän-->
+        <!-- käytämme tässä apuna data-attribuutteja-->
+        <!-- # Delete user
+              DELETE http://127.0.0.1:3000/users/:id
+        -->
+      </tbody>
+    </table>
+
+    <div class="forms">
+      <div style="flex: 1">
+        <h3>GET and DELETE</h3>
+
+        <p>
+          Hae käyttäjän tiedot painamalla alla olevaa nappia. Tämä hakee tiedot sekä luo taulukon
+          tbody osan. Jokaiselle riville luodaan nappula. Info hakee yksittäisen rivin tiedot ja
+          avaa dialogin. Delete poistaa yksittäisen rivin ja varmistaa tapahtuman confirm()
+          metodilla.
+        </p>
+
+        <pre><code>
+          # Get all users (requires token)
+          GET http://127.0.0.1:3000/api/users
+          
+          # Get user by id (requires token)
+          GET http://127.0.0.1:3000/api/users/:id
+          
+          # Delete user (requires token)
+          DELETE http://127.0.0.1:3000/api/users/:id
+          </code></pre>
+
+        <table class="styled-table">
+          <thead>
+            <tr>
+              <th>User Name</th>
+              <th>User Level</th>
+              <th>Info</th>
+              <th>Delete</th>
+              <th>ID</th>
+            </tr>
+          </thead>
+          <tbody class="tbody">
+            <!-- tänne haetaan kaikki käyttäjät -->
+            <!-- # Get all users -->
+            <!-- GET http://127.0.0.1:3000/api/users -->
+          </tbody>
+        </table>
+
+        <button class="get_users">Hae users tiedot</button>
+      </div>
+      <div style="flex: 1">
+        <h3>PUT and FORMS</h3>
+
+        <p>
+          Lisää ja päivitä käyttäjiä eli users tiedot formin avulla. Formi lisää uuden käyttäjän
+          nappulasta 'post'. Huomio, että PUT metodi toimii vain kirjatuneen käyttäjän osalta. Eli voit vain muokata käyttäjää, millä olet parhaimmillaan kirjautuneena. Jatkossa olisi fiksua hakea käyttäjän tiedot suoraan formien INPUT kenttiin.
+        </p>
+
+        <pre><code>
+          
+          # Update user's own data (requires token)
+          PUT http://127.0.0.1:3000/api/users/
+          content-type: application/json
+          
+          {
+            "username": "test-update4",
+            "password": "test-pw-update4",
+            "email": "update4@example.com"
+          }
+          </code></pre>
+
+        <form class="addform">
+          <!-- tänne formi -->
+          <!-- https://www.w3schools.com/css/css_form.asp -->
+          <!-- https://www.w3schools.com/css/tryit.asp?filename=trycss_form_padding -->
+
+          <!-- formin avulla testaamme create ja update user reittejä -->
+        </form>
+      </div>
+    </div>
+
+    <dialog class="info_dialog">
+      <p>
+        <!-- tänne haetaan yksittäinen valittu käyttäjät -->      
+        <div>UserID: <span>Id</span></div>
+        <div>UserName: <span>Username</span></div>
+        <div>Email: <span>Email</span></div>
+        <div>Role: <span>Role</span></div> 
+      </p>
+      <button autofocus>Close</button>
+    </dialog>
+
+    <h3>Kotitehtävä, tee ja testaa kaikki: /api/entries</h3>
+
+    <p>Hae käyttäjän (user: 1) entires tiedot ja console.log</p>
+    <pre>
+      # Get entries by id
+      GET http://localhost:3000/api/entries/:id
+    </pre>
+    <button class="get_entry">Hae (user:1) entries</button>
+
+    <script type="module" src="/start-api-harjoituspohja.js"></script>
+
+  </body>
+</html>

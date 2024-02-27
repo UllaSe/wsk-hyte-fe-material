@@ -1,12 +1,43 @@
-# Viikon 5 Fokus - Fetch Syventävä, Dialogit, Formit
+# Viikon 6 Fokus - API rajapintatestaus, Fetch Syventävä, Dialogit, Formit
 
-Täällä viikolla keskitymme harjoittelemaan rajapintakutsuja. Teemme viime viikon tehtävät 1 ja 2 yhdessä. Viikkotehtävät 3 ja 4 jäävät kotitehtäviksi.
+Täällä viikolla keskitymme harjoittelemaan rajapintakutsuja. Tarvitset kaksi eriliasta pohjaa, hae tiedostot vk6-apikutsut-pohja kansiosta.
 
-Hae tämän jälkeen sivujen harjoituspohja. Pohjaan haemme tietokannasta kaikki käyttäjät listana. Lisäämme sivustoon dialogin yksittäisiä käyttäjätietoja varten sekä rakennamme käyttäjien lisäystä/muokkaamista varten siihen sopivan formin.
+Ensimmäisen start-auth.html pohjaan harjoittelemme sisäänkirjatumista sekä tokenien käyttöä. start-apiharjoituspohja.html sivupohjaan haemme tietokannasta kaikki käyttäjät listana. Lisäämme tähän sivustoon myös dialogin yksittäisiä käyttäjätietoja varten sekä rakennamme käyttäjien muokkaamista varten siihen sopivan formin.
 
-### Viikon harjotustehtävä, alku
+## Viikon harjotustehtävä, alku - Autentikaatio sekä Tokenit
 
-![image](images/apiharjoitus.png)
+Avaa ensin start-auth.html sivu. Näet sivustossa kaksi erilaista formia. Tutkimme ensin himen koodia, jonka jälkeen toteutamme formien avulla sisäänkirjatumisen.
+
+JWT (JSON Web Token) autentikaatio on menetelmä, joka mahdollistaa turvallisen ja tehokkaan käyttäjän tunnistamisen ja valtuuttamisen web-sovelluksissa ja REST-rajapinnoissa. Se perustuu tokenien käyttöön, jotka ovat pieniä datayksiköitä, jotka sisältävät tietoja käyttäjän tunnistamiseksi ja valtuuttamiseksi. JWT-avainta käytetään usein lähettämään käyttäjän tunnistetietoja, kuten käyttäjätunnus ja rooli, ja se voi myös sisältää muita metatietoja. JWT:t ovat turvallisia, koska ne ovat allekirjoitettuja, mikä tarkoittaa, että niiden alkuperä voidaan varmistaa ja tietoja ei voi muuttaa ilman avainta. REST-rajapinnoissa JWT-tokenit usein välitetään HTTP-otsakkeiden kautta pyyntöjen autentikoimiseksi ja käyttöoikeuksien varmistamiseksi.
+
+JWT-tokenit voidaan lähettää HTTP-pyynnön otsakkeissa. Yleisimmin käytetty otsake on Authorization, joka sisältää JWT-tokenin. Esimerkiksi:
+
+```javacript
+Authorization: Bearer <JWT-tokeni>
+
+```
+
+JWT-tokenin vastaanottaminen tapahtuu vastaavasti. Sovellus tarkistaa saapuvan pyynnön otsakkeista, evästeistä tai pyyntöparametreista JWT-tokenin, joka sisältää tarvittavat käyttäjän tunnistetiedot ja käyttöoikeudet. Sen jälkeen sovellus voi tarkistaa tokenin aitouden ja käyttöoikeudet sen allekirjoituksen avulla. Jos tokeni on validi, sovellus voi antaa käyttäjälle pääsyn pyydettyyn toiminnallisuuteen tai resursseihin.
+
+![image](images/auth.png)
+
+### Tokenien tallentaminen
+
+Paras tapa tallentaa JWT (JSON Web Token) -autentikointitunniste frontendissä riippuu tarkoituksistasi ja turvallisuusnäkökohdista. Tässä muutamia yleisiä menetelmiä:
+
+- Selaimen evästeet
+
+- Paikallinen tallennustila (Local Storage) tai sessiotallennustila (Session Storage). Käytä localStoragea pysyvään tallennukseen yli selainistuntojen ja sessionStoragea istunto-kohtaiseen tallennukseen.
+
+- Muistivarasto: Tallenna JWT-tunniste muistiin käyttämällä JavaScript-muuttujia. Vaikka tämä menetelmä voi olla turvallinen, se vaatii huolellista hallintaa varmistaaksesi, ettei tunniste vuoda XSS-hyökkäysten kautta.
+
+- IndexedDB: Tallenna JWT-tunniste selainmen omaan tietokantaan.
+
+Jokaisella menetelmällä on omat etunsa ja haittansa turvallisuuden, toteutuksen helppouden ja yhteensopivuuden suhteen eri käyttötapausten kanssa. Harkitse sovelluksesi vaatimuksia ja turvallisuustarpeita valitessasi sopivan tavan tallentaa JWT-tunnisteet frontendissä. Kurssilla käytämme LocalStoragea.
+
+## Viikon harjotustehtävä, loppu - kirjaantuneen käyttäjän apikutsut ja niiden käsittely
+
+![image](images/apikutsut.png)
 
 ### Selektorit
 
@@ -63,11 +94,11 @@ Lisätään Dialogille myös Backdrop ominaisuus.
 Seuraa luentoa, käymme läpi sekä taulukkojen rakenteen, että itse FETCHin käytön. Kun painat nappulaa "Hae users tiedot" haetaan tiedot:
 
 ```http
-# Get all users
-GET http://127.0.0.1:3000/api/users
+# Get all users (requires token)
+  GET http://127.0.0.1:3000/api/users
 ```
 
-Haetuista tiedoista generoidaan taulukko dynaamisesti DOM metrodeilla ja jokaiselle taulukon jäsenelle generoidaan Info sekä Detele button-elementit. Button elementeille lisätään data-attribuuttina käyttäjän ID jatkokäsittelyä varten.
+Haetuista tiedoista generoidaan taulukko dynaamisesti DOM metodeilla ja jokaiselle taulukon jäsenelle generoidaan Info sekä Detele button-elementit. Button elementeille lisätään data-attribuuttina käyttäjän ID jatkokäsittelyä varten.
 
 ```html
 <tr>
@@ -91,21 +122,28 @@ tr.appendChild(td3);
 Kun Info nappulaa klikkaa, hakee ohjelma tiedot käyttäen yksittäisen käyttäjän reittiä ja avaa yksittäisen käyttäjän tiedot dialogina. Tarvittavan ID:n hakuun se saa data-atrribuuti tiedoista.
 
 ```http
-# Get user by id
-GET http://127.0.0.1:3000/api/users/:id
+# Get user by id (requires token)
+  GET http://127.0.0.1:3000/api/users/:id
 ```
 
 Koodiesimerkki:
 
 ```js
-async function getOneUserDialog(evt) {
+async function getUser(evt) {
   // haetaan data-attribuutin avulla id, tämä nopea tapa
   const id = evt.target.attributes['data-id'].value;
-  console.log(id);
+  console.log('Getting individual data for ID:', id);
   const url = `http://127.0.0.1:3000/api/users/${id}`;
-  try {
-    const data = await fetchData(url);
-    // avaa modaali ja lisää data
+  let token = localStorage.getItem('token');
+  const options = {
+    method: 'GET',
+    headers: {
+      Authorization: 'Bearer: ' + token,
+    },
+  };
+  fetchData(url, options).then((data) => {
+    console.log(data);
+    // Avaa modaali/dialogi ja generoi data
   ...
 ```
 
@@ -118,28 +156,19 @@ Elementin poistamista varten käytämme confirm() metodia jolla varmistamme, ett
 [confirm](https://github.com/ilkkamtk/JavaScript-english/blob/main/BOM-DOM-event.md#confirm)
 
 ```http
-# Delete user
-DELETE http://127.0.0.1:3000/users/:id
+# Delete user (requires token)
+  DELETE http://127.0.0.1:3000/api/users/:id
 ```
 
 Kuvankaappaus:
 ![image](images/delete.png)
 
-Seuraavaksi luomme oikealla näkyvän formin. Lähettämällä formin, voimme käyttää POST ja PUT reittejä, joilla lisäämme käyttäjän tai muokkaamme olemassa olevaa. Alla on lisää tietoja formien käytöstä.
+Viimeisenä luomme oikealla näkyvän formin. Lähettämällä formin, voimme käyttää PUT reittiä, jolla lisäämme muokkaamme olemassa olevaa käyttäjää. Alla on lisää tietoja formien käytöstä.
 
 ```http
-# Create user
-POST http://127.0.0.1:3000/users
-content-type: application/json
-
-{
-  "username": "test-update4",
-  "password": "test-pw-update4",
-  "email": "update4@example.com"
-}
 
 # Update user
-PUT http://127.0.0.1:3000/users/:id
+PUT http://127.0.0.1:3000/api/users/:id
 content-type: application/json
 
 {
@@ -170,6 +199,6 @@ HTML5-lomakkeet sisältävät erilaisia lomake-elementtejä, kuten tekstikentti�
 Lomakkeita voi tyylitellä suhteellisen helposti, tosin osa, kuten radio-button kentät ovat hieman haastteellisempia. Useimmiten tyyylittelyyn käytetään myös **:valid** ja **:invalid** pseudoluokkia.
 https://www.w3schools.com/css/css_form.asp
 
-**_Teemme hiihtoloman jälkeen formien tyylittelyn sekä validointia, jolla tarkastamme kenttien oikeellisuuden._**
+**_Teemme formien tyylittelyn sekä valdoinnin hieman myöhemmin kurssilla._**
 
 https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation

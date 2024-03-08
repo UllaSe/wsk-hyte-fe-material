@@ -35,7 +35,7 @@ Paras tapa tallentaa JWT (JSON Web Token) -autentikointitunniste frontendissä r
 
 Jokaisella menetelmällä on omat etunsa ja haittansa turvallisuuden, toteutuksen helppouden ja yhteensopivuuden suhteen eri käyttötapausten kanssa. Harkitse sovelluksesi vaatimuksia ja turvallisuustarpeita valitessasi sopivan tavan tallentaa JWT-tunnisteet frontendissä. Kurssilla käytämme LocalStoragea.
 
-## Viikon harjotustehtävä, loppu - kirjaantuneen käyttäjän apikutsut ja niiden käsittely
+## Viikon harjoitustehtävä, loppu - kirjaantuneen käyttäjän apikutsut ja niiden käsittely
 
 ![image](images/apikutsut.png)
 
@@ -163,21 +163,6 @@ Elementin poistamista varten käytämme confirm() metodia jolla varmistamme, ett
 Kuvankaappaus:
 ![image](images/delete.png)
 
-Viimeisenä luomme oikealla näkyvän formin. Lähettämällä formin, voimme käyttää PUT reittiä, jolla lisäämme muokkaamme olemassa olevaa käyttäjää. Alla on lisää tietoja formien käytöstä.
-
-```http
-
-# Update user
-PUT http://127.0.0.1:3000/api/users/:id
-content-type: application/json
-
-{
-  "username": "test-update4",
-  "password": "test-pw-update4",
-  "email": "update4@example.com"
-}
-```
-
 Tutki täältä formien lähettämistä:
 
 [kohdasta Promise](https://github.com/ilkkamtk/JavaScript-english/blob/main/apit-ajax.md#promise)
@@ -199,6 +184,23 @@ HTML5-lomakkeet sisältävät erilaisia lomake-elementtejä, kuten tekstikentti�
 Lomakkeita voi tyylitellä suhteellisen helposti, tosin osa, kuten radio-button kentät ovat hieman haastteellisempia. Useimmiten tyyylittelyyn käytetään myös **:valid** ja **:invalid** pseudoluokkia.
 https://www.w3schools.com/css/css_form.asp
 
-**_Teemme formien tyylittelyn sekä valdoinnin hieman myöhemmin kurssilla._**
+**_Formien tyylittelyn sekä valdointi videoluennoilla_**
 
 https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation
+
+## Viikon kotiehtävä - kirjaantuneen käyttäjän omien tietojen muokkaaminen
+
+Luo kohdassa PUT and FORMS näkyvän formii. Lähettämällä formin, käytä PUT reittiä, jolla muokkaat olemassa olevaa käyttäjää. Kun muokkaus onnistuu, voit tulostaa tiedon konsoliin.
+
+```http
+
+# Update user
+PUT http://127.0.0.1:3000/api/users/:id
+content-type: application/json
+
+{
+  "username": "test-update4",
+  "password": "test-pw-update4",
+  "email": "update4@example.com"
+}
+```

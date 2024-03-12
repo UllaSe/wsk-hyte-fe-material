@@ -26,6 +26,14 @@ a:hover {
   color: #535bf2;
 }
 
+html {
+  background: url('/shiba.webp') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 body {
   min-width: 320px;
   min-height: 100vh;
